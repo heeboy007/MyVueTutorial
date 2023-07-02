@@ -2,7 +2,7 @@
 	<div class="inputBox shadow">
 		<input type="text" placeholder="Type what you have todo" v-model="newTodoItem" v-on:keyup.enter="addTodo">
 		<span class="addContainer" v-on:click="addTodo">
-			<font-awesome-icon icon="fa-solid fa-plus"/>
+			<font-awesome-icon class="addBtn" icon="fa-solid fa-plus"/>
 		</span>
 	</div>
 </template>
