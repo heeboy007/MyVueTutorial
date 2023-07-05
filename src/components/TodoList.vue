@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<ul>
-			<li v-for="(todoItem, index) in todoItems" :key="todoItem" class="shadow">
+			<li v-for="(todoItem, index) in propsdata" :key="todoItem" class="shadow">
 				<span>
 					<font-awesome-icon icon="fa-solid fa-check"/>
 				</span>
@@ -16,6 +16,7 @@
 
 <script>
 export default {
+	props: ['propsdata'],
 	data() {
 		return {
 			todoItems: []
@@ -30,8 +31,7 @@ export default {
 	},
 	methods: {
 		removeTodo(todoItem, index){
-			localStorage.removeItem(todoItem);
-			this.todoItems.splice(index, 1);
+			this.$emit("removeTodo", todoItem, index);
 		}
 	}
 }

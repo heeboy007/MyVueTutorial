@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-	<TodoInput></TodoInput>
-	<TodoList></TodoList>
-	<TodoFooter></TodoFooter>
+	<TodoInput v-on:addTodo="addTodo"></TodoInput>
+	<TodoList v-bind:propsdata="todoItems" @removeTodo="removeTodo"></TodoList>
+	<TodoFooter v-on:removeAll="removeAll"></TodoFooter>
   </div>
 </template>
 
@@ -17,8 +17,22 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      todoItems: []
     }
+  },
+  methods: {
+	addTodo(todoItem) {
+		localStorage.setItem(todoItem, todoItem);
+		this.todoItems.push(todoItem);
+	},
+	removeTodo(todoItem, index) {
+		localStorage.removeItem(todoItem);
+		this.todoItems.splice(index, 1);
+	},
+	removeAll() {
+		localStorage.clear();
+		this.todoItems = [];
+	}
   },
   components: {
     'TodoHeader': TodoHeader,
