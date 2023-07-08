@@ -13,6 +13,15 @@ Examples are copy of Do it! 예제로 입문하고 실전으로 완성한다! Vu
 * vue project
 	* todo list를 구현해보는 예제 프로젝트 입니다.
 
+* 230708
+	* end of example project! these are some more add-on skills to get :
+	
+1. Vuex - For better state handling
+2. Vue Reactivity - How vue handles data-rerendering?
+3. SSR - Server Side Rendering - For Faster Search Engine Speeds and Initial Page Loadings!
+4. WebPack - A Tool to make every assets and as single file!
+5. ES6 - New syntax and functions for JS
+
 ## 💬 Support & Documentation
 
 아직도 성장하고 있는 만큼 지켜봐 주시면 감사하겠습니다.
